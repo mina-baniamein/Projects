@@ -1,0 +1,10 @@
+ACS READ ME
+
+Authors: Baniamein Mina, Hanna Marco, Louis Camille
+
+On this repository: 
+-Power Point Presentation  with assigned tasks and results
+-Matlab Codes for Nominal Control System, Simplified Control System and Nominal Control System with no dynamic inversion
+
+Warning:
+Montecarlo analysis requires to have fixed dynamic inversion values
