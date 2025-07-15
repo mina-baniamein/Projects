@@ -1,7 +1,4 @@
 Spacecraft Guidance and Navigation
 Author: Baniamein Mina
-
-Warning: the code is still under development and it is NOT intended to be delivered in the current version
-
 Contents: SPICE kernels, assignments text, codes.
 It is necessary to substitute the kernel path present in the codes with the one of your PC.
