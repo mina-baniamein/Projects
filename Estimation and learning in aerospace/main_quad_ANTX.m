@@ -1,16 +1,5 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % ANT-X SIMULATOR - MAIN                                                  %
-% Authors:  Mattia Giurato (mattia.giurato@polimi.it)                     %
-%           Paolo Gattazzo (paolo.gattazzo@polimi.it)                     %
-% Date: 13/12/2017                                                        %
-% Adapted to ANT-X 2DoF by:  Salvatore Meraglia (salvatore.meraglia@polimi.it)%
-% Date: 22/12/2022                                                        %
-%
-% Further modified to include structure three-state identified longitudinal model
-% 06/01/23 ML
-% 
-% Further modified to pick outputs with measurement error
-% 03/01/24 ML
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 clearvars;
@@ -275,3 +264,4 @@ if exist('slprj','dir')
 end
 
 %% END OF CODE
+
