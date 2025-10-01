@@ -1,6 +1,6 @@
-Estimation and Learning project
+Estimation and Learning Project
 This MATLAB/Simulink script is the main driver for simulating and identifying the longitudinal dynamics of the ANT-X UAV
-
+The estimations are in the main, while in other files you can find Monte Carlo validation
 1) Model Setup
 Defines a 3-state longitudinal model (velocity, pitch rate, pitch angle) with input (pitching moment) and outputs (states + longitudinal acceleration).
 Adds configurable noise and sensor/actuator delays.
