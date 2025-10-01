@@ -2,3 +2,84 @@ Spacecraft Guidance and Navigation
 Author: Baniamein Mina
 Contents: SPICE kernels, assignments text, codes.
 It is necessary to substitute the kernel path present in the codes with the one of your PC.
+
+Assignment 1, GUIDANCE
+Exercise 1
+Point 1 → Finds and plots the five Lagrangian points (L1–L5) for the Earth-Moon system and computes their Jacobi constants.
+Point 2 → Uses a differential correction method (Newton-like iteration with STM) to refine initial conditions and obtain a halo orbit around L1/L2.
+Point 3 → Builds a family of halo orbits (continuation method by varying Jacobi constant) and plots them in 3D.
+
+Exercise 2
+Earth-to-Moon transfers in the Planar Bicircular Restricted Four-Body Problem (PBRFBP) with perturbations:
+Point 0 → Kernel setup (SPICE) → loads planetary ephemerides for Earth, Moon, and Sun.
+Point 1 → Propagates an initial guess trajectory in both rotating frame and ECI frame, checking frame consistency.
+Point 2 → Optimizes Earth–Moon transfer using nonlinear programming (NLP):
+(a) Simple shooting without gradients.
+(b) Simple shooting with gradients for improved efficiency.
+Point 3 → Uses a multiple shooting method with gradients to refine the transfer trajectory.
+Point 4 → Solves for launch and arrival dates via zero-finding (ephemeris-based).
+Final step → Performs a full n-body propagation (with Sun, Earth, Moon, and planets) to validate the optimized transfer.
+
+Exercise 3
+Low-thrust optimal debria control problem for a spacecraft transfer in Earth orbit using Pontryagin’s Maximum Principle (PMP):
+Point 1 → Defines spacecraft, thrust, and orbit parameters; plots the spatial density model.
+Point 2 → Adimensionalizes the problem setup for numerical efficiency.
+Point 4 → Applies PMP with the dynamics, Hamiltonian, and costates to solve for an optimal transfer trajectory via fsolve that minimizes debris encounter.
+Verifies solution accuracy, checks final time, and analyzes Hamiltonian constancy.
+Plots the 3D optimal trajectory and thrust direction in the NTW frame.
+Point 5 → Performs a numerical continuation method reducing maximum thrust, re-solving the PMP iteratively to generate a family of optimal trajectories.
+
+Assignment 2, NAVIGATION
+Exercise 1
+Point 1 → Propagates state and covariance using two analytical methods:
+          Linear Covariance (LinCov) method.
+          Unscented Transform (UT) method.
+          Compares predicted mean states and error ellipses.
+Point 2 → Performs a Monte Carlo simulation (1,000 samples) by numerically propagating initial uncertainty and estimating mean + covariance.
+          Compares Monte Carlo results with LinCov & UT approximations.
+          Error analysis & plots →
+          Plots covariance ellipses (LinCov, UT, Monte Carlo).
+          Eigenvalue growth for position & velocity covariance.
+          QQ‑plots to validate Gaussianity of propagated uncertainty.
+
+Exercise 2
+This MATLAB code performs satellite orbit determination and ground station visibility analysis using TLE data, SPICE kernels, and nonlinear least-squares fitting:
+
+Point 1 → Loads SMOS satellite TLE with SGP4, converts TEME → ECI states, and propagates orbit (Keplerian & J2).
+Computes antenna pointing parameters (azimuth, elevation, range, range-rate).
+Identifies visibility windows for ground stations (Kourou, Troll, Svalbard).
+
+Point 2 → Simulates noisy ground station measurements (range, azimuth, elevation) during visibility windows with SGP4 + SPICE.
+Compares measured vs predicted elevations at each station.
+
+Point 3 → Performs nonlinear least-squares estimation (LSQ) to reconstruct the satellite’s ECI state from measurements:
+Case (a): Kourou only with pure Keplerian dynamics.
+Case (b): All stations with Keplerian dynamics.
+Case (c): All stations with J2-perturbed dynamics.
+Estimates state + computes covariance, transforming results into Keplerian element uncertainties.
+
+Point 4 → Compares station pairings (Kourou-Svalbard, Troll-Svalbard, Kourou-Troll) to evaluate which ground station combinations provide the best state accuracy and smallest orbital-element deviations.
+
+Point 5 → Compares station pairings with long term propagation
+
+Exercise 3
+This MATLAB code applies state estimation with the Unscented Kalman Filter (UKF) for a spacecraft around the Moon observed from a lunar lander:
+Point 1 → Predicts the satellite’s trajectory in lunar orbit (Keplerian propagation), computes lander position, and derives visibility windows in range/azimuth/elevation.
+Point 2 → Simulates noisy range measurements from the lander and validates Gaussian noise injection.
+Point 3 → Implements UKF1 to estimate the spacecraft’s position and velocity from position measurements, plotting estimation error and 3σ confidence bounds.
+Point 4 → Extends to UKF2 with an augmented state, estimating both satellite state and lander site coordinates (lat/lon) using range observations.
+Tracks error and uncertainty evolution for position, velocity, and lander location.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
