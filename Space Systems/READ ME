@@ -1,0 +1,59 @@
+Space Systems Engineering and Operations – Final Project
+
+Authors: Lorenzo Barbieri, Riccardo Belgi, Gaia Trovatelli, Pietro Communara, Mina Baniamein
+Professor: Michèle Lavagna
+Academic Year: 2022/2023
+
+Overview
+This project presents a system-level engineering study of the MetOp-A spacecraft, the first European meteorological satellite in polar orbit. 
+The analysis includes mission objectives, subsystem design, and reverse engineering of key components.
+
+Mission Objectives
+Provide global meteorological data for weather forecasting, climate, and environmental monitoring.
+Ensure continuous broadcast of data to worldwide users.
+Support space weather monitoring (solar activity, charged particles).
+Guarantee mission lifetime extension and compliance with space debris mitigation standards.
+
+Subsystem Studies
+
+1) Mission Analysis
+Sun-synchronous orbit at 824 km altitude, inclination 98.7°.
+∆V budget ~163 m/s with hydrazine monopropellant.
+Orbit maintenance via in-plane and out-of-plane manoeuvres.
+
+2) Propulsion
+Eight monopropellant hydrazine thrusters (22.7 N each).
+Blow-down pressurization with helium.
+Redundant tank and thruster configuration for reliability.
+
+3) Tracking, Telemetry & Telecommand (TTMTC)
+S-band omnidirectional coverage for TT&C.
+X-band high-rate downlink (70 Mbit/s) for science data.
+Ground segment: Svalbard (Norway) + McMurdo (Antarctica) for reduced latency.
+
+4) Attitude and Orbit Control (AOCS)
+Multiple control modes (LEOP, routine ops, safe mode).
+Reaction wheels + thrusters for actuation.
+Star trackers, gyros, and Earth/Sun sensors for attitude determination.
+
+5) Thermal Control System (TCS)
+Radiators, insulation, and heaters for PLM & SVM.
+Analysis of hot/cold cases and thermal fluxes.
+
+6) Electrical Power Subsystem (EPS)
+Solar arrays sized for BOL/EOL conditions.
+Rechargeable batteries for eclipse phases.
+Power regulation and distribution sized for all payloads.
+
+7) On-Board Data Handling (OBDH)
+Central OBC managing payloads and subsystems.
+24 GB onboard solid-state recorder.
+Real-time and stored data transmission.
+
+8)Spacecraft Configuration
+Payload and propulsion arranged within launcher fairing constraints.
+
+
+
+
+Balanced configuration for stability and efficiency.
