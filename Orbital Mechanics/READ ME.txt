@@ -1,10 +1,13 @@
 READ ME
 
-Orbital Mechanics zip folder
+Orbital Mechanics 
 
 Authors: Baniamein Mina, Bellezza Alessandro, Di carlo Pierpaolo, Trovatelli Gaia
 
 Contents: 
 -Matlab Codes
 -Project Reports
--Presentation slides with results
+
+Interplanetary Mission
+
+
