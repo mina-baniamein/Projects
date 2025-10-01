@@ -6,5 +6,4 @@ On this repository:
 -Power Point Presentation  with assigned tasks and results
 -Matlab Codes for Nominal Control System, Simplified Control System and Nominal Control System with no dynamic inversion
 
-Warning:
-Montecarlo analysis requires to have fixed dynamic inversion values
+The codes are MATLAB live scripts, so a download is necessary to visualize
