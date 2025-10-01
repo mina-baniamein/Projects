@@ -14,8 +14,8 @@ This MATLAB script simulates and optimizes an interplanetary mission trajectory 
 1. Launch from Mercury within a specified departure window.
 2. Gravity Assist (Flyby) at Venus while respecting atmospheric constraints.
 3. Arrival at a target asteroid within a defined arrival window.
-The program performs the following steps:
 
+The program performs the following steps:
 -Defines mission windows (launch, flyby, arrival) and planetary constants.
 -Sweeps through possible launch/flyby/arrival dates to evaluate mission feasibility.
 -Solves Lambert’s problem for each leg (Mercury → Venus, Venus → Asteroid) to compute transfer orbits.
@@ -32,6 +32,38 @@ The program performs the following steps:
  -Closest flyby altitude and total time of flight.
 
 Planetary mission
+1) Unperturbed Orbit Propagation
+Starts from given orbital elements (semi-major axis, eccentricity, inclination, RAAN, argument of perigee).
+Propagates orbit using Keplerian two-body dynamics.
+Computes and plots the ground track on Earth.
+Verifies repeating ground track conditions for resonance (using ratio k/m).
+
+2) Perturbed Orbit Propagation (J2, Drag, SRP)
+Orbit is propagated again including Earth’s oblateness (J2), atmospheric drag, and solar radiation pressure.
+Compares unperturbed vs. perturbed motion on orbital plots and ground tracks.
+Shows how perturbations affect the trajectory and repetition of the ground track.
+
+3) Comparison of Propagation Methods
+Propagation is performed with:
+Full Cartesian equations of motion.
+Gauss’ variational equations (orbital elements form).
+Computational times of both approaches are compared.
+Evolution of orbital elements (a, e, i, Ω, ω, f) is plotted to highlight secular trends vs. short-period effects.
+Relative errors between methods are computed.
+
+4) Validation with Real Object (Debris ID 43247)
+The same propagation models are applied to a real debris object.
+Results are compared to ephemerides data (from NASA Horizons).
+Semi-major axis, eccentricity, inclination, RAAN, and argument of perigee are plotted vs. time.
+Filtering (moving average) is applied to highlight secular variations.
+Demonstrates the accuracy of the perturbation models relative to real-world data.
+
+Visual Outputs
+3D orbits (Earth-centered, unperturbed & perturbed).
+Ground tracks (with and without repetitions, unperturbed vs perturbed).
+Time evolution plots of all orbital elements.
+Relative error plots between propagation methods.
+Comparison with real ephemerides data for object 43247.
 
 
 
