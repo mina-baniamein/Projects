@@ -1,1 +1,31 @@
 Estimation and Learning project
+This MATLAB/Simulink script is the main driver for simulating and identifying the longitudinal dynamics of the ANT-X UAV
+
+1) Model Setup
+Defines a 3-state longitudinal model (velocity, pitch rate, pitch angle) with input (pitching moment) and outputs (states + longitudinal acceleration).
+Adds configurable noise and sensor/actuator delays.
+
+2) Simulation
+Loads controller parameters and excitation signals (e.g., ExcitationM, u3211).
+Runs the Simulink simulator for single-axis dynamics with chosen input excitation.
+Data Handling & Cross-Validation
+Splits simulated data into training and validation sets.
+Compares measured vs simulated outputs (pitch rate, acceleration) to check consistency.
+
+3) Model Identification
+Grey-box identification: estimates system matrices from physical model structure.
+Black-box identification:
+Performs spectral analysis & output-error modeling.
+Uses PBSID (Prediction-Based Subspace Identification) to estimate state-space matrices.
+Refines models via greyest structuring.
+
+4) Model Comparison
+Computes frequency responses (Bode plots) of real, grey-box, and PBSID models.
+Evaluates identification errors and phase/magnitude discrepancies.
+
+5) Validation
+Runs the identified models on unseen data (cross-validation).
+Plots results against simulation truth → outputs vs predictions, and prediction errors.
+
+
+Removes temporary files generated during simulation.
