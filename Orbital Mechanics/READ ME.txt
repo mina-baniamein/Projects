@@ -9,5 +9,30 @@ Contents:
 -Project Reports
 
 Interplanetary Mission
+This MATLAB script simulates and optimizes an interplanetary mission trajectory consisting of:
+
+1. Launch from Mercury within a specified departure window.
+2. Gravity Assist (Flyby) at Venus while respecting atmospheric constraints.
+3. Arrival at a target asteroid within a defined arrival window.
+The program performs the following steps:
+
+-Defines mission windows (launch, flyby, arrival) and planetary constants.
+-Sweeps through possible launch/flyby/arrival dates to evaluate mission feasibility.
+-Solves Lambert’s problem for each leg (Mercury → Venus, Venus → Asteroid) to compute transfer orbits.
+-Calculates required ΔV for departure, planetary flyby, and asteroid insertion.
+-Optimizes trajectory by finding the combination of dates that minimizes total ΔV.
+-Models Venus flyby dynamics, checking that the closest approach is above the atmosphere and computing the actual turning angle of the hyperbola.
+-Propagates orbits numerically for Mercury, Venus, the asteroid, and transfer arcs.
+-Generates 3D trajectory plots:
+-Full mission trajectory in the Solar System.
+-Detailed incoming and outgoing Venus flyby hyperbolas.
+-Outputs mission results including:
+ -Optimal launch, flyby, and arrival dates.
+ -Minimum ΔV requirements (departure, flyby maneuver, final rendezvous).
+ -Closest flyby altitude and total time of flight.
+
+Planetary mission
+
+
 
 
